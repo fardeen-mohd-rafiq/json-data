@@ -167,7 +167,7 @@
              globalData = JSON.parse(getDataFromLocalStrg);
              updateData(globalData);
         } else {
-            readTextFile("/JsonData.json", function (text) {
+            readTextFile("JsonData.json", function (text) {
                 var data = JSON.parse(text);
                 console.log("data", data);
                 globalData = data;
