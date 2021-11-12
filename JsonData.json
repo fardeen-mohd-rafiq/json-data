@@ -1,0 +1,203 @@
+[
+    
+    {
+       "firstName": "John",
+       "lastName": "Doe",
+       "role": "student",
+       "age": "20",
+       "department": "BSC IT",
+       "contact": "9367779127",
+       "email": "johndoe73@gmail.com",
+       "locality": "Chembur"
+   },
+   {   "firstName": "william",
+       "lastName": "smith",
+       "role": "student",
+       "age": "20",
+       "department": "BSC CS",
+       "contact": "9749798527",
+       "email": "william453@gmail.com",
+       "locality": "Chembur"
+   },
+   {   "firstName": "Fardeen",
+       "lastName": "Shaikh",
+       "role": "student",
+       "age": "18",
+       "department": "BSC CS",
+       "contact": "8686842003",
+       "email": "fardeen2903@gmail.com",
+       "locality": "CheetaCamp"
+   },
+   {
+       "firstName": "jassir",
+       "lastName": "Ahmed",
+       "role": "student",
+       "age": "20",
+       "department": "BSC CS",
+       "contact": "7710957885",
+       "email": "jassirahmed@gmail.com",
+       "locality": "CheetaCamp"
+   },
+   {
+       "firstName": "Safwan",
+       "lastName": "Ahmed",
+       "role": "student",
+       "age": "18",
+       "department": "BSC CS",
+       "contact": "8108360326",
+       "email": "saffan0503@gmail.com",
+       "locality": "CheetaCamp"
+   },
+   {
+       "firstName": "azharuddin",
+       "lastName": "shaikh",
+       "role": "student",
+       "age": "18",
+       "department": "BSC CS",
+       "contact": "9702914246",
+       "email": "azharu02@gmail.com",
+       "locality": "CheetaCamp"
+   },
+   {
+       "firstName": "Jamal",
+       "lastName": "Mohammed",
+       "role": "Professor",
+       "age": "28",
+       "department": "BSC CS",
+       "contact": "8655305749",
+       "email": "jamalmd05@gmail.com",
+       "locality": "Chembur"
+   },
+   {
+       "firstName": "Gowtham",
+       "lastName": "swamy",
+       "role": "student",
+       "age": "18",
+       "department": "BSC IT",
+       "contact": "7021273680",
+       "email": "gowtham9103@gmail.com",
+       "locality": "Chembur"
+   },
+   {
+       "firstName": "Abdul ",
+       "lastName": "Rehman",
+       "role": "student",
+       "age": "18",
+       "department": "BSC CS",
+       "contact": "8928164207",
+       "email": "motherdiary@gmail.com",
+       "locality": "CheetaCamp"
+   },
+   {
+       "firstName": "Jaffar",
+       "lastName": "Ali",
+       "role": "Professor",
+       "age": "30",
+       "department": "BSC IT",
+       "contact": "7356708187",
+       "email": "jaffarali73@gmail.com",
+       "locality": "Chembur"
+   },
+   {
+    "firstName": "Asif",
+    "lastName": "Shaikh",
+    "role": "Student",
+    "age": "20",
+    "department": "BSC IT",
+    "contact": "9893289352",
+    "email": "asif3561@gmail.com",
+    "locality": "Chembur"
+   },
+   {
+    "firstName": "Afrid",
+    "lastName": "Shaikh",
+    "role": "Student",
+    "age": "22",
+    "department": "BSC CS",
+    "contact": "7021477723",
+    "email": "afrid02@gmail.com",
+    "locality": "CheetaCamp"
+   },
+   {
+    "firstName": "Afzal",
+    "lastName": "Khan",
+    "role": "Student",
+    "age": "19",
+    "department": "BSC IT",
+    "contact": "9372084987",
+    "email": "afzal420@gmail.com",
+    "locality": "Chembur"
+   },
+   {
+    "firstName": "Kalaam",
+    "lastName": "Shaikh",
+    "role": "Student",
+    "age": "19",
+    "department": "BSC CS",
+    "contact": "9384508048",
+    "email": "kalaam8160@gmail.com",
+    "locality": "CheetaCamp"
+   },
+   {
+    "firstName": "Kayaam",
+    "lastName": "Ahmed",
+    "role": "Student",
+    "age": "18",
+    "department": "BSC IT",
+    "contact": "9967828330",
+    "email": "kayaam9210@gmail.com",
+    "locality": "CheetaCamp"
+   },
+   {
+    "firstName": "Rizwan",
+    "lastName": "Shaikh",
+    "role": "Student",
+    "age": "18",
+    "department": "BSC IT",
+    "contact": "9004971701",
+    "email": "rizwan0302@gmail.com",
+    "locality": "CheetaCamp"
+   },
+   {
+    "firstName": "Stephen",
+    "lastName": "Nadar",
+    "role": "Student",
+    "age": "18",
+    "department": "BSC CS",
+    "contact": "8884921495",
+    "email": "stephen7698@gmail.com",
+    "locality": "Sion"
+   },
+   {
+    "firstName": "Akash",
+    "lastName": "Dhanasekhar",
+    "role": "Student",
+    "age": "18",
+    "department": "BSC IT",
+    "contact": "7384182381",
+    "email": "akash4915@gmail.com",
+    "locality": "CheetaCamp"
+   },
+   {
+    "firstName": "Faiz",
+    "lastName": "Shaikh",
+    "role": "Student",
+    "age": "18",
+    "department": "BSC IT",
+    "contact": "8246426873",
+    "email": "faiz8274@gmail.com",
+    "locality": "CheetaCamp"
+   },
+   {
+    "firstName": "Shafi",
+    "lastName": "Shaikh",
+    "role": "Student",
+    "age": "18",
+    "department": "BSC IT",
+    "contact": "7926332569",
+    "email": "shafi9374@gmail.com",
+    "locality": "CheetaCamp"
+   }
+
+
+]
