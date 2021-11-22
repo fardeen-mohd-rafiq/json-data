@@ -9,13 +9,10 @@
     <title>Document</title>
 
     <style>
-        .container{
-            width: 100%;
-        }
         .head {
-            background: linear-gradient(177deg, rgba(202,235,255,1) 35%, rgba(0,212,255,1) 85%);
+            background: linear-gradient(170deg, rgba(202,235,255,1) 15%, rgba(0,212,255,1) 50%, rgba(202,235,255,1) 85%);
             border: 20px solid #76d0e9;
-            margin: 0px -4px 0px 4px;
+            margin: 0px -15px 0px 4px;
             align-items: center;
         }
         .crud{
@@ -51,6 +48,14 @@
             font-size: 40px;
             font-weight: 600;
         }
+        span{
+            color: red;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        #modalTitle{
+            color: black;
+        }
         @media (max-width: 991.98px) { 
             .container{
                 margin: 0;
@@ -78,6 +83,7 @@
                 <th scope="col">Age</th>
                 <th scope="col">Department</th>
                 <th scope="col">Hobbies</th>
+                <th scope="col">Date</th>
                 <th scope="col">Contact</th>
                 <th scope="col">Email</th>
                 <th scope="col">Locality</th>
@@ -103,50 +109,55 @@
                             <label for="firstNameInputContrl" class="form-label">First Name</label>
                             <input type="text" class="form-control" id="firstNameInputContrl"
                                 placeholder="Write here...">
-                                <span id="requiredspan"></span>
+                                <span id="fnamespan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="lastNameInputContrl" class="form-label">Last Name</label>
                             <input type="text" class="form-control" id="lastNameInputContrl"
                                 placeholder="Write here...">
-                                <span id="requiredspan"></span>
+                                <span id="lnamespan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="roleInputContrl" class="form-label">Role</label>
                             <input type="text" class="form-control" id="roleInputContrl"
                                 placeholder="Write here...">
-                                <span id="requiredspan"></span>
+                                <span id="rolespan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="ageInputContrl" class="form-label">Age</label>
                             <input type="number" class="form-control" id="ageInputContrl" placeholder="Write here...">
-                            <span id="requiredspan"></span>
+                            <span id="agespan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="departmentInputContrl" class="form-label">Department</label>
                             <input type="text" class="form-control" id="departmentInputContrl" placeholder="Write here...">
-                            <span id="requiredspan"></span>
+                            <span id="departmentspan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="hobbiesInputContrl" class="form-label">Hobbies</label>
                             <input type="text" class="form-control" id="hobbiesInputContrl" placeholder="Write here...">
-                            <span id="requiredspan"></span>
+                            <span id="hobbiesspan"></span>
+                        </div>
+                        <div class="mb-1">
+                            <label for="dateInputContrl" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="dateInputContrl" placeholder="Write here...">
+                            <span id="datespan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="contactInputContrl" class="form-label">Contact</label>
-                            <input type="number" class="form-control" id="contactInputContrl"
-                                placeholder="Write here...">
-                                <span id="requiredspan"></span>
+                            <input type="number" class="form-control" id="contactInputContrl" placeholder="Write here..."
+                            oninput="this.value = this.value.replace(/[^0-9,]/g, '').replace(/(\..*)\./g, '$1');">
+                                <span id="contactspan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="emailInputContrl" class="form-label">Email ID</label>
                             <input type="email" class="form-control" id="emailInputContrl" placeholder="Write here...">
-                            <span id="requiredspan"></span>
+                            <span id="emailspan"></span>
                         </div>
                         <div class="mb-1">
                             <label for="localityInputContrl" class="form-label">Locality</label>
                             <input type="text" class="form-control" id="localityInputContrl" placeholder="Write here...">
-                            <span id="requiredspan"></span>
+                            <span id="localityspan"></span>
                         </div>
 
                     </div>
@@ -160,25 +171,28 @@
     </div>
 
     <!-- delete modal box -->
-    <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Delete Details</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Are you sure ? <br> Do you want to delete this person's details?</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-              <button type="button" class="btn btn-primary">Yes</button>
-            </div>
-          </div>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete Details</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+       Are you sure?
+       Do you want to delete this person's details
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-primary">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
 
     <div class="error">
      <h2 id="errorMsg">No data found</h2>
@@ -191,9 +205,11 @@
             keyboard: false
         });
 
-        var myDeleteModal = new bootstrap.Modal(document.getElementById('deleteModal'), {
+    var myDeleteModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
             keyboard: false
-        });    
+        });
+        
+    
 
 
     function readTextFile(file, callback) {
@@ -232,14 +248,18 @@
         // }
 
     function myDeleteFun(data) {
+        myDeleteModal.show()
         console.log("data", data);
+        
         for (let i = 0; i < globalData.length; i++) {
             const element = globalData[i];
             if (element.id == data.id) {
                 globalData.splice(i, 1);
                 break;
             }
+        
         }
+        console.log("myDeleteFun",myDeleteFun)
         updateData(globalData);
         console.log("globalData", globalData);
     }
@@ -272,6 +292,9 @@
             var myHobbiesTD = document.createElement("TD");
             myHobbiesTD.innerHTML = element.hobbies;
 
+            var myDateTD = document.createElement("TD");
+            myDateTD.innerHTML = element.date;
+
             var myNumberTD = document.createElement("TD");
             myNumberTD.innerHTML = element.contact;
 
@@ -291,7 +314,7 @@
                 ")'>Delete</button>";
             myDeleteTD.innerHTML = deleteBtn;
 
-            myRow.append(myTh, myfNameTD, mylNameTD, myRoleTD, myAgeTD, myDepartmentTD, myHobbiesTD, myNumberTD, myEmailTD, myLocalityTD, myEditTD, myDeleteTD);
+            myRow.append(myTh, myfNameTD, mylNameTD, myRoleTD, myAgeTD, myDepartmentTD, myHobbiesTD, myDateTD, myNumberTD, myEmailTD, myLocalityTD, myEditTD, myDeleteTD);
 
             document.getElementById("myDataTable").append(myRow);
         }
@@ -315,6 +338,7 @@
                 document.getElementById("ageInputContrl").value = getObj.age;
                 document.getElementById("departmentInputContrl").value = getObj.department;
                 document.getElementById("hobbiesInputContrl").value = getObj.hobbies;
+                document.getElementById("dateInputContrl").value = getObj.date;
                 document.getElementById("contactInputContrl").value = getObj.contact;
                 document.getElementById("emailInputContrl").value = getObj.email;
                 document.getElementById("localityInputContrl").value = getObj.locality;
@@ -324,10 +348,6 @@
         }
         
         //function of delete
-        function ondeletefun(){
-            myDeleteModal.show();
-        }
-        console.log("ondeletefun", ondeletefun);
 
         function detailsSubmitFun(event) {
             event.preventDefault();
@@ -337,6 +357,7 @@
             var ageInputVal = document.getElementById("ageInputContrl").value;
             var departmentInputVal = document.getElementById("departmentInputContrl").value;
             var hobbiesInputVal = document.getElementById("hobbiesInputContrl").value;
+            var dateInputVal = document.getElementById("dateInputContrl").value;
             var contactInputVal = document.getElementById("contactInputContrl").value;
             var emailInputVal = document.getElementById("emailInputContrl").value;
             var localityInputVal = document.getElementById("localityInputContrl").value;
@@ -348,66 +369,131 @@
             var age = document.getElementById("ageInputContrl").value;
             var department = document.getElementById("departmentInputContrl").value;
             var hobbies = document.getElementById("hobbiesInputContrl").value;
+            var date = document.getElementById("dateInputContrl").value;
             var contact = document.getElementById("contactInputContrl").value;
             var email = document.getElementById("emailInputContrl").value;
             var locality = document.getElementById("localityInputContrl").value;
 
+            var name_regex = /^[a-zA-Z^S]{2,30}$/;
+            var role_regex = /^[a-zA-Z^S]{2,10}$/;
+            var age_regex = /^[0-9^S]{2}$/;
+            var department_regex = /[A-Z]{2,10}/;
+            var hobbies_regex = /^[a-zA-Z^S]{2,16}$/;
+            var contact_regex = /^[6789][0-9]{9}/;
+            var emailtest = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var locality_regex = /^[a-zA-Z]{2,16}$/;
 
-            // if (!firstname, !lastname, !role, !age, !department, !hobbies, !contact, !email, !locality){
 
-            //     document.getElementById("requiredspan").innerHTML = "please fill the above requirements";}
+        if (firstname && lastname && role  && age && department && hobbies && contact && email && locality) {
+        let ifAllInputHaveValidVal = true;
+        if (name_regex.test(firstname)) {
+          document.getElementById("fnamespan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("fnamespan").innerHTML = "firstname is Invalid";
+        }
+        
+        if (name_regex.test(lastname)) {
+          document.getElementById("lnamespan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("lnamespan").innerHTML = "lastname is Invalid";
+        }
 
-            if (firstname && lastname && role && age && department && hobbies && contact && email &&
-            locality){
-            let ifAllInputHaveValidVal = true;
+        if (role_regex.test(role)) {
+          document.getElementById("rolespan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("rolespan").innerHTML = "role is Invalid";
+        }
 
+        if (age_regex.test(age)) {
+          document.getElementById("agespan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("agespan").innerHTML = "age is Invalid";
+        }
+
+        if (department_regex.test(department)) {
+          document.getElementById("departmentspan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("departmentspan").innerHTML = "department is Invalid";
+        }
+
+        if (hobbies_regex.test(hobbies)) {
+          document.getElementById("hobbiesspan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("hobbiesspan").innerHTML = "hobbies is Invalid";
+        }
+
+        if (emailtest.test(email)) {
+          document.getElementById("emailspan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("emailspan").innerHTML = "email is Invalid";
+        }
+
+        if (contact_regex.test(contact)) {
+          document.getElementById("contactspan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("contactspan").innerHTML = "Mobile number is Invalid";
+        }
+
+        if (emailtest.test(email)) {
+          document.getElementById("emailspan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("emailspan").innerHTML = "email is Invalid";
+        }
+
+        if (locality_regex.test(locality)) {
+          document.getElementById("localityspan").innerHTML = "";
+        } else {
+          ifAllInputHaveValidVal = false;
+          document.getElementById("localityspan").innerHTML = "locality is Invalid";
+        }
+    }else{
+        
             if (!firstname) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("fnamespan").innerHTML = "please fill the above requirements";
             }
             
             if (!lastname) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("lnamespan").innerHTML = "please fill the above requirements";
             }
 
             if (!role) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("rolespan").innerHTML = "please fill the above requirements";
             }
 
             if (!age) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("agespan").innerHTML = "please fill the above requirements";
             }
 
             if (!department) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("departmentspan").innerHTML = "please fill the above requirements";
             }
 
             if (!hobbies) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("hobbiesspan").innerHTML = "please fill the above requirements";
             }
 
             if (!contact) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("contactspan").innerHTML = "please fill the above requirements";
             }
 
             if (!email) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
+             document.getElementById("emailspan").innerHTML = "please fill the above requirements";
             }
 
             if (!locality) {
-                ifAllInputHaveValidVal = false;
-             document.getElementById("requiredspan").innerHTML = "please fill the above requirements";
-            }else{
-                document.getElementById("requiredspan").innerHTML = "";
+             document.getElementById("localityspan").innerHTML = "please fill the above requirements";
             }
-        }
+        } console.log("ifAllInputHaveValidVal",ifAllInputHaveValidVal)
+    }
 
 
             if (editModeIs) {
@@ -419,6 +505,7 @@
                         globalData[index].age = ageInputVal;
                         globalData[index].department = departmentInputVal;
                         globalData[index].hobbies = hobbiesInputVal;
+                        globalData[index].date = dateInputVal;
                         globalData[index].contact = contactInputVal;
                         globalData[index].email = emailInputVal;
                         globalData[index].locality = localityInputVal;
@@ -434,6 +521,7 @@
                     "age": ageInputVal,
                     "department": departmentInputVal,
                     "hobbies": hobbiesInputVal,
+                    "date": dateInputVal,
                     "contact": contactInputVal,
                     "email": emailInputVal,
                     "locality": localityInputVal
@@ -444,8 +532,16 @@
             updateData(globalData);
             document.getElementById("myForm").reset();
             myModal.hide();
-            myDeleteModal.hide(); 
-        }
+
+            // function myDeleteFun(){
+                
+
+            //     console.log("myDeleteFun", myDeleteFun);
+            //     function Yes(){
+            //         element.id
+            //     }
+            // }
+        
 
         function checkData() {
             if (globalData.length > 0) {
